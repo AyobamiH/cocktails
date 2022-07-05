@@ -1,0 +1,67 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+html{
+  font-size: 62.50%;
+  background-color: rgb(35, 3, 18);
+  text-align: center;
+  color: white;
+  
+
+}
+
+img{ 
+  width: 300px;
+  height: 20rem;
+}
+
+.allCockTails{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+  
+  justify-content: space-evenly;
+  align-content: space-between;
+  align-items: center;
+  color: white;
+
+}
+
+
+ .allCockTails > section{
+  /* border: 1px solid blue; */
+  /* height: 25vh;
+  width: 33.33vw;*/
+  text-align: center;
+  width: 300px;
+  height: 42rem; 
+  padding: 2rem;
+
+  
+
+}
+
+
+.allCockTails  h2{
+  color: #a78d9b;
+}
+
+
+
+
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
