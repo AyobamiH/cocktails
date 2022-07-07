@@ -1,15 +1,14 @@
 
 
-
-            
-             
 class CreateElement{
     constructor(){
 
         this.allCockTails = document.querySelector('.allCockTails')
         this.section = document.createElement("section")
         this.h1 = document.createElement("h1");
-        this.h2 = document.createElement('h2')  
+        // this.h2 = document.createElement('h2') 
+        this.summary = document.createElement('summary') 
+        this.details = document.createElement('details')
         this.img = document.createElement('img')   
     }
 
@@ -21,7 +20,8 @@ class CreateElement{
     newSection(){
         this.section.appendChild(this.h1)
         this.section.appendChild(this.img)
-        this.section.appendChild(this.h2)
+        this.details.appendChild(this.summary)
+        this.section.appendChild(this.details)
         this.allCockTails.appendChild(this.section)
     }
     
@@ -60,7 +60,8 @@ function fetchDrinks(){
                     
                     let newElements = new CreateElement()
                     newElements.h1.innerText =  `${allDrinks[i].strDrink}`
-                    newElements.h2.innerText = `${allDrinks[i].strInstructions}`
+                    newElements.summary.innerText = 'Drink Info'
+                    newElements.details.innerText = `${allDrinks[i].strInstructions}`
                     newElements.img.src = `${allDrinks[i].strDrinkThumb}`
                     newElements.newSection()
 
@@ -75,6 +76,80 @@ function fetchDrinks(){
         
     }
 }
+            
+             
+// class CreateElement{
+//     constructor(){
+
+//         this.allCockTails = document.querySelector('.allCockTails')
+//         this.section = document.createElement("section")
+//         this.h1 = document.createElement("h1");
+//         this.h2 = document.createElement('h2')  
+//         this.img = document.createElement('img')   
+//     }
+
+
+//     emptyCockTailSection(){
+//         this.allCockTails.innerHTML = ''
+//     }
+
+//     newSection(){
+//         this.section.appendChild(this.h1)
+//         this.section.appendChild(this.img)
+//         this.section.appendChild(this.h2)
+//         this.allCockTails.appendChild(this.section)
+//     }
+    
+// }
+
+
+
+// function fetchDrinks(){
+//     let drink = document.querySelector('input').value
+    
+//     let allElements = new CreateElement()
+//     allElements.emptyCockTailSection()
+//     if(!drink){
+//         let noDrink = new CreateElement()
+//         noDrink.emptyCockTailSection()
+        
+//         noDrink.h1.innerText= 'Enter a drink please'
+//         noDrink.allCockTails.appendChild(noDrink.h1)
+        
+//     }else{
+        
+//         fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + drink)
+//         .then(res => res.json())
+//         .then( data =>{
+//            if(data.drinks == null){
+//                 let noDrink = new CreateElement()
+//                 noDrink.emptyCockTailSection()
+                
+//                 noDrink.h1.innerText= 'Drink not Found'
+//                 noDrink.allCockTails.appendChild(noDrink.h1)
+//            }else{
+//                 let allDrinks = data.drinks
+//                 //console.log(allDrinks)
+                
+//                 for(let i=0; i < allDrinks.length; i++){
+                    
+//                     let newElements = new CreateElement()
+//                     newElements.h1.innerText =  `${allDrinks[i].strDrink}`
+//                     newElements.h2.innerText = `${allDrinks[i].strInstructions}`
+//                     newElements.img.src = `${allDrinks[i].strDrinkThumb}`
+//                     newElements.newSection()
+
+
+//                 }
+//            }
+        
+//         })
+//         .catch(err => {
+//             console.log(err)
+//         })
+        
+//     }
+// }
 
 
 
